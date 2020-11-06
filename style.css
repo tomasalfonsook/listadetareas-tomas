@@ -1,0 +1,221 @@
+@font-face{
+    font-family:'Montserrat';
+    src: url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+}
+
+body{
+    background-color: #151E21;
+    text-align: center;
+}
+
+.titulo{
+    font-family: 'Montserrat';
+    text-align: center;
+    color: #E2E2E3;
+}
+
+.new-task-group{
+    width:50%;
+    background-color: #006269;
+    border:0;
+    border-radius: 15px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 6px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.new-task{
+    border-radius: 5px;
+    height: 30px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    font-size: 15px;
+}
+
+.new-task-text{
+    width: 550px;
+    height: 32px;
+    border: 0;
+    background-color: #006269;
+    color: #E0F7FB;
+    outline: none; 
+}
+
+.new-task-text::placeholder{
+    color: #E0F7FB;
+}
+
+.new-task-btn{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-color: #00AEC7;
+    color: #E0F7FB;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.new-task-btn i{
+    margin-top: 7px;
+}
+
+.new-task-btn:hover{
+    color: #E0F7FB;
+    background: #7DDFEE;
+}
+
+.task-group{
+    width:50%;
+    background-color: #00AEC7;
+    border:0;
+    border-radius: 15px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 6px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.task-group-disabled{
+    width:50%;
+    background-color: #3E3E3E;
+    border:0;
+    border-radius: 15px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 6px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.task{
+    border-radius: 5px;
+    height: 30px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    font-size: 15px;
+}
+
+.task-text{
+    width: 530px;
+    height: 32px;
+    border: 0;
+    background-color: #00AEC7;
+    color: #E0F7FB;
+    outline: none; 
+}
+
+.task-text-disabled{
+    width: 530px;
+    height: 32px;
+    border: 0;
+    background-color: #3E3E3E;
+    color: #E0F7FB;
+    text-decoration: line-through;
+    outline: none; 
+}
+
+.disabled{
+    background-color: #3E3E3E;
+    color: #3E3E3E;
+}
+
+.task-text::placeholder{
+    color: #E0F7FB;
+}
+
+.task-btn{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: auto;
+    background-color: #006269;
+    color: #E0F7FB;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.task-btn i{
+    margin-top: 7px;
+}
+
+.task-btn:hover{
+    color: #E0F7FB;
+    background: #DB2049;
+}
+
+.task-btn-disabled{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: auto;
+    background-color: #E0F7FB;
+    color: #3E3E3E;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.task-btn-disabled i{
+    margin-top: 7px;
+}
+
+.task-btn-disabled:hover{
+    color: #E0F7FB;
+    background: #DB2049;
+}
+
+.info-text{
+    width: 530px;
+    height: 32px;
+    border: 0;
+    background-color: #006269;
+    color: #E0F7FB;
+    outline: none; 
+    text-align: center;
+}
+
+label{
+  font-size: 1.5em;
+  color:#E0F7FB;
+}
+
+input[type=checkbox]{
+  display: none;
+}
+
+input[type=checkbox] + label{
+  cursor:pointer;
+}
+
+label:before{
+  content:'';
+  background:transparent;
+  border: 3px solid #E0F7FB;
+  border-radius: 50%;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+  text-align:center;
+  vertical-align:middle;
+}
+input[type=checkbox]:checked + label:before{
+  text-align: center;
+  content: '⬤';
+  font-size: 70%;
+  font-family:'Montserrat';
+  color:#E0F7FB;
+}
