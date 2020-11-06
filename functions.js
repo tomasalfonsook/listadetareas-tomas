@@ -2,14 +2,18 @@ function addElement(){
     
     var destino = document.getElementById("tasks");
     
+    var entrada = document.getElementById("newElement");
+    
+    if((entrada.value == "") || (entrada.value == "Por favor ingresa una texto para esta nota!")){
+        document.getElementById("newElement").value = "Por favor ingresa una texto para esta nota!";
+    } else {
+    
     var contador = 0;
     contador = document.getElementById("contador").value;
     contador++;
     
-    document.getElementById("contador").value = contador;
-    
-    var entrada = document.getElementById("newElement");
-    
+    document.getElementById("contador").value = contador;    
+        
     var div = document.createElement("div");
     div.id = "task"+contador;
     div.className = "task-group";
@@ -59,6 +63,8 @@ function addElement(){
     document.getElementById("tareas_activas").value++;
     
     infoReport();
+        
+    }
     
 }
 
