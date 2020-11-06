@@ -77,6 +77,8 @@ function deleteElement(task){
     
     document.getElementById("contador").value = contador-1;
     
+    document.getElementById("tareas_activas").value--;
+    
     infoReport();
     
 }
