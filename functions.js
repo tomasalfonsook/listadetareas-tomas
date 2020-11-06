@@ -4,8 +4,8 @@ function addElement(){
     
     var entrada = document.getElementById("newElement");
     
-    if((entrada.value == "") || (entrada.value == "Por favor ingresa una texto para esta nota!")){
-        document.getElementById("newElement").value = "Por favor ingresa una texto para esta nota!";
+    if(entrada.value == ""){
+        
     } else {
     
     var contador = 0;
