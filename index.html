@@ -3,26 +3,60 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tareas de Walter</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script type="text/javascript" src="functions.js"></script>
+    <title>Lista de Tareas de Tomas</title>    
+    <?php header('Access-Control-Allow-Origin: *'); ?>
 </head>
+<header>
+    <ul>
+      <li><h2>LISTA DE TAREAS DE TOMAS</h2></li>
+      <lr><i id="spanUbicacion" class="fa fa-search-location"></i><a id="location">Ubicación no encontrada</a></lr>
+    </ul>
+</header>
 
-<body>
-   <h2 class="titulo">LISTA DE TAREAS DE WALTER</h2>
-   <div class="new-task-group">
-          <input type="hidden" value="0" id="contador">
-           <input type="text" class="new-task new-task-text" placeholder="Ingresa una nueva tarea" id="newElement">
-           <a class="new-task-btn" onclick="addElement();"><i class="fa fa-plus"></i></a>
+
+
+<div id="preloader" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="loader-container">
+        <div class="loader"></div>
+        <div class="loader2"></div>
+    </div> 
+    <h2 class="titulo">Obteniendo ubicación...</h2>
+  </div>
+
+</div>
+
+<body onload="cargarPagina()">
+   <div id="contenido" class="fixed">
+       <div class="new-task-title">
+              <input type="hidden" value="0" id="contador">
+               <input type="text" class="new-task new-task-text" placeholder="Ingresa una nueva tarea" id="newElement" required onkeypress="pressKey(event)">
+               <a id="btn-agregar" class="new-task-btn" onclick="addElement();"><i class="fa fa-plus"></i></a>
+       </div>
+       <div class="new-task-group">
+              <input id="tareas-activas" type="text" class="pill-counters pill-counters-primary" value="Tareas activas: 0" disabled>
+              <input id="tareas-total" type="text" class="pill-counters pill-counters-secondary" value="Total de tareas: 0" disabled>
+              <button id="btn-fullscreen" class="btn-primary fa fa-expand-arrows-alt" onclick="launchFullScreen(document.documentElement);"></button>
+              <button id="btn-fullscreen" class="btn-primary fa fa-dumpster-fire" onclick="borrarTodo();"></button>
+       </div>
+       <div class="new-task-group" id="info">
+               <input type="hidden" id="tareas_activas" value="0">
+               <input type="hidden" value="" id="latitud">
+               <input type="hidden" value="" id="longitud">
+               <p class="info-text" id="info-text">Actualmente no hay ninguna tarea! Podés crear una en el recuadro de arriba.</p>
+       </div>
    </div>
-   <div class="new-task-group" id="info">
-           <input type="hidden" id="tareas_activas" value="0">
-           <input type="text" value="Actualmente no hay ninguna tarea! Podés crear una en el recuadro de arriba." class="task info-text" id="info-text" disabled>
-   </div>
-   <div id="tasks">
+   <div id="tareas" class="bottom">
+       <div id="tasks">
        
-   </div>
+       </div>
+   </div>       
+   
    
 </body>
 </html>
