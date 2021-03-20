@@ -91,6 +91,8 @@ function readLocalStorage(){
         var contador = 0;
         contador = document.getElementById("contador").value;
         contador++;
+        
+        document.getElementById("tareas_activas").value++;
 
         document.getElementById("contador").value = contador;    
 
@@ -167,7 +169,7 @@ function readLocalStorage(){
         var obtenerHora = obtenerDia[1];
         obtenerDia = obtenerDia[0];
 
-        var contenido = "Guardado el " + obtenerDia + " a las " + obtenerHora + " " + arreglo.ubicacion;
+        var contenido = "Guardado el " + obtenerDia + " a las " + obtenerHora + " en " + arreglo.ubicacion;
         
         var contenido = document.createTextNode(contenido);
 
@@ -175,7 +177,7 @@ function readLocalStorage(){
 
         destino.appendChild(fecha);    
         
-        document.getElementById("tareas_activas").value++;
+        console.log("estado"+estadoCheck);
         
         if(estadoCheck == true){
             changeState(posicion);
