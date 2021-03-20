@@ -1,9 +1,7 @@
 function saveLocalStorage(posicion, texto, fecha, ubicacion, estado){
     if (typeof(Storage) !== 'undefined') {
-        console.log("La ubicacion que llega es: "+ubicacion);
         var objetos = {"texto": texto, "fecha": fecha, "ubicacion": ubicacion, "estado": estado};
         localStorage.setItem(posicion, JSON.stringify(objetos));
-        console.log(localStorage);
     } else {
         alert("Su navegador no es compatible con el almacenamiento web offline");
     }
@@ -50,7 +48,6 @@ function updateLocalStorage(element){
     posicion = cortar[1];
     var texto = element.value;
     var fecha = document.getElementById("fecha"+posicion).textContent;
-    console.log(fecha);
     
     var vacio = (texto === "");
         
@@ -77,13 +74,11 @@ function updateLocalStorage(element){
 }
 
 function readLocalStorage(){
-    console.log(localStorage);
     if(localStorage.length > 0){
         var i = 1;
     while(i < localStorage.length + 1){
         var posicion = String(i);
         var arreglo = JSON.parse(localStorage.getItem(posicion));
-        console.log(arreglo);
         
         var destino = document.getElementById("tasks");
         var textoEntrada = arreglo.texto;
@@ -176,8 +171,6 @@ function readLocalStorage(){
         fecha.appendChild(contenido);
 
         destino.appendChild(fecha);    
-        
-        console.log("estado"+estadoCheck);
         
         if(estadoCheck == true){
             changeState(posicion);
@@ -287,9 +280,6 @@ function addElement(){
         
     var contenido = "Guardado el " + obtenerDia + " a las " + obtenerHora + " en Lat: " + latitud + " Long: " + longitud;
         
-    console.log("La ubi: "+ubicacionCompleta);
-
-        
     var contenido = document.createTextNode(contenido);
         
     fecha.appendChild(contenido);
@@ -325,7 +315,6 @@ function deleteElement(task){
     document.getElementById("tareas_activas").value--;
     
     localStorage.removeItem(id);
-    console.log(localStorage);
     
     infoReport();
     
